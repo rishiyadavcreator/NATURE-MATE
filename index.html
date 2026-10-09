@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b2a">
+  <title>NatureMate AI | Touch Grass</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">🌿</span>
+      NatureMate <span class="ai-label">AI</span>
+    </a>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#garden">Garden</a>
+      <a href="#journal">My Journal</a>
+    </nav>
+    <span class="offline-badge">
+      <span class="status-dot"></span> Local AI
+    </span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">LESS SCREEN. MORE GREEN.</span>
+        <h1>Your next adventure<br>starts <span>outside.</span></h1>
+        <p>
+          Discover nature, grow something beautiful, and turn
+          your free time into real-world adventures with AI.
+        </p>
+        <a href="#explore" class="primary-btn">Explore activities ↗</a>
+        <div class="hero-stats">
+          <div><strong id="completedCount">0</strong><span>Challenges done</span></div>
+          <div><strong id="journalCount">0</strong><span>Nature notes</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="sun"></div>
+        <div class="mountain mountain-back"></div>
+        <div class="mountain mountain-front"></div>
+        <div class="hero-caption">Find your little piece of nature 🌱</div>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR DAILY DOSE OF NATURE</span>
+          <h2>Get outside and explore</h2>
+          <p>Choose a mission or let AI create one just for you.</p>
+        </div>
+        <span class="section-emoji">🌳</span>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <div class="card-icon green-icon">🍃</div>
+          <span class="difficulty">EASY · 10 MIN</span>
+          <h3>Leaf Detective</h3>
+          <p>Find three different leaves and notice how their shapes differ.</p>
+          <button class="outline-btn complete-btn"
+            data-title="Leaf Detective">Mark as done ✓</button>
+        </article>
+
+        <article class="challenge-card">
+          <div class="card-icon yellow-icon">🐦</div>
+          <span class="difficulty">EASY · 15 MIN</span>
+          <h3>Bird Watcher</h3>
+          <p>Spend a few quiet minutes observing birds from a safe spot.</p>
+          <button class="outline-btn complete-btn"
+            data-title="Bird Watcher">Mark as done ✓</button>
+        </article>
+
+        <article class="challenge-card">
+          <div class="card-icon blue-icon">☁️</div>
+          <span class="difficulty">EASY · 10 MIN</span>
+          <h3>Cloud Explorer</h3>
+          <p>Look at the sky and discover different cloud shapes.</p>
+          <button class="outline-btn complete-btn"
+            data-title="Cloud Explorer">Mark as done ✓</button>
+        </article>
+      </div>
+
+      <div class="ai-panel">
+        <div class="ai-panel-heading">
+          <div class="card-icon purple-icon">✨</div>
+          <div>
+            <h3>AI Adventure Generator</h3>
+            <p>Get a fresh outdoor mission from your local AI model.</p>
+          </div>
+        </div>
+        <label for="interest">What would you like to explore?</label>
+        <div class="input-row">
+          <select id="interest">
+            <option value="nature">Nature exploration</option>
+            <option value="birds">Bird watching</option>
+            <option value="gardening">Gardening</option>
+            <option value="walking">Walking and observation</option>
+            <option value="photography">Nature photography</option>
+          </select>
+          <button class="primary-btn" id="generateBtn">Generate mission ✨</button>
+        </div>
+        <div class="ai-result" id="missionResult" aria-live="polite">
+          <span>🌱</span>
+          <p>Your next outdoor adventure will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section garden-section" id="garden">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">GROW SOMETHING GOOD</span>
+          <h2>Your smart garden planner</h2>
+          <p>Ask your local AI for beginner-friendly gardening ideas.</p>
+        </div>
+        <span class="section-emoji">🪴</span>
+      </div>
+
+      <div class="garden-panel">
+        <div class="garden-illustration">🌱</div>
+        <div class="garden-form">
+          <label for="city">Your city or region</label>
+          <input id="city" type="text" placeholder="e.g. Gorakhpur">
+
+          <label for="space">Available space</label>
+          <select id="space">
+            <option>Balcony</option>
+            <option>Small garden</option>
+            <option>Indoor pots</option>
+            <option>Terrace</option>
+            <option>Community garden</option>
+          </select>
+
+          <label for="experience">Your gardening experience</label>
+          <select id="experience">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+          </select>
+
+          <button class="primary-btn" id="gardenBtn">Plan my garden 🌿</button>
+          <div class="ai-result" id="gardenResult" aria-live="polite">
+            Your personalized garden plan will appear here.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journal-section" id="journal">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">MEMORIES FROM OUTSIDE</span>
+          <h2>My nature journal</h2>
+          <p>Record something interesting you noticed outdoors.</p>
+        </div>
+        <span class="section-emoji">📔</span>
+      </div>
+
+      <form id="journalForm" class="journal-form">
+        <label for="noteTitle">What did you discover?</label>
+        <input id="noteTitle" type="text"
+          placeholder="e.g. A beautiful butterfly" required maxlength="80">
+        <label for="noteText">Your observation</label>
+        <textarea id="noteText" rows="3"
+          placeholder="Describe what you saw, heard, or learned..."
+          required maxlength="1000"></textarea>
+        <button class="primary-btn" type="submit">Save nature note ♡</button>
+      </form>
+
+      <div id="journalEntries" class="journal-entries"></div>
+    </section>
+
+    <section class="closing-banner">
+      <span>🌼</span>
+      <h2>The best moments aren't always online.</h2>
+      <p>Close the laptop when you're ready. Your next discovery is out there.</p>
+      <a href="#explore" class="primary-btn">Find an adventure ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#">🌿 NatureMate AI</a>
+    <p>Built with open-weight AI. Made for the real world.</p>
+    <span>Nature first. Technology second.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
